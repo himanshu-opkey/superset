@@ -65,7 +65,7 @@ export class Theme {
   private static readonly defaultTokens = {
     // Brand
     brandLogoAlt: 'Bi-Studio',
-    brandLogoUrl: 'https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png',
+    brandLogoUrl: 'https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png',
     brandLogoMargin: '18px',
     brandLogoHref: 'https://www.opkey.com/',
     brandLogoHeight: '14px',
@@ -93,7 +93,7 @@ export class Theme {
   };
 
 
-  
+
 
   private antdConfig: AntdThemeConfig;
 
@@ -113,9 +113,7 @@ export class Theme {
     const newConfig: AnyThemeConfig = config ? { ...config } : {};
 
     // Ensure token property exists with defaults
-    if(this.theme && this.isThemeDark()){
-      Theme.defaultTokens.brandLogoUrl = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
-    }
+
     newConfig.token = {
       ...Theme.defaultTokens,
       ...(config?.token || {}),
@@ -141,6 +139,7 @@ export class Theme {
     // This method generates all antd tokens and filters out the ones not allowed
     // in Superset
     const theme = Theme.getAntdTokens(antdConfig);
+  
     return Object.fromEntries(
       allowedAntdTokens.map(key => [key, (theme as Record<string, any>)[key]]),
     ) as SharedAntdTokens;
@@ -160,9 +159,6 @@ export class Theme {
   setConfig(config: AnyThemeConfig): void {
     const antdConfig = normalizeThemeConfig(config);
 
-    if(this.theme && this.isThemeDark()){
-      Theme.defaultTokens.brandLogoUrl = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
-    }
     // Apply default tokens to token property
     antdConfig.token = {
       ...Theme.defaultTokens,
@@ -171,22 +167,21 @@ export class Theme {
 
     // First phase: Let Ant Design compute the tokens
     const tokens = Theme.getFilteredAntdTheme(antdConfig);
-
     // Set the base theme properties
     this.antdConfig = antdConfig;
-    if(this.theme && this.isThemeDark()){
-      Theme.defaultTokens.brandLogoUrl = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
-    }
     this.theme = {
       ...Theme.defaultTokens,
       ...antdConfig.token, // Passing through the extra, superset-specific tokens
       ...tokens,
       colors: {} as DeprecatedThemeColors, // Placeholder that will be filled in the second phase
     };
+    this.theme.brandLogoUrl = this.theme.colorBgContainer!= "#ffffff"
+    ? 'https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png'
+    : 'https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png';
 
     // Second phase: Now that theme is initialized, we can determine if it's dark
     // and generate the legacy colors correctly
-   debugger
+
     const systemColors = getSystemColors(tokens);
     const isDark = this.isThemeDark(); // Now we can safely call this
     this.theme.colors = getDeprecatedColors(systemColors, isDark);
