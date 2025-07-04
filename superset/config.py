@@ -113,7 +113,7 @@ PACKAGE_JSON_FILE = str(files("superset") / "static/assets/package.json")
 #     "type": "image/png"
 #     "rel": "icon"
 # },
-FAVICONS = [{"href": "/static/assets/images/favicon.png"}]
+FAVICONS = [{"href": "https://myqlm.opkeyone.com/IconImages/favicon1.ico"}]
 
 
 def _try_json_readversion(filepath: str) -> str | None:
@@ -312,10 +312,10 @@ AUTH_RATE_LIMIT = "5 per second"
 # GLOBALS FOR APP Builder
 # ------------------------------
 # Uncomment to setup Your App name
-APP_NAME = "Superset"
+APP_NAME = "Bi-Studio"
 
 # Specify the App icon
-APP_ICON = "https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png"
+APP_ICON = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
 
 # Specify where clicking the logo would take the user'
 # Default value of None will take you to '/superset/welcome'

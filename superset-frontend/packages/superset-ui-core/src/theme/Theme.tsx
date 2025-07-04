@@ -67,8 +67,8 @@ export class Theme {
     brandLogoAlt: 'Bi-Studio',
     brandLogoUrl: 'https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png',
     brandLogoMargin: '18px',
-    brandLogoHref: '/',
-    brandLogoHeight: '24px',
+    brandLogoHref: 'https://www.opkey.com/',
+    brandLogoHeight: '14px',
 
     // Default colors
     colorPrimary: '#2893B3', // NOTE: previous lighter primary color was #20a7c9
@@ -92,6 +92,9 @@ export class Theme {
     fontWeightStrong: 500,
   };
 
+
+  
+
   private antdConfig: AntdThemeConfig;
 
   private static readonly sizeMap: Record<FontSizeKey, string> = {
@@ -110,6 +113,9 @@ export class Theme {
     const newConfig: AnyThemeConfig = config ? { ...config } : {};
 
     // Ensure token property exists with defaults
+    if(this.theme && this.isThemeDark()){
+      Theme.defaultTokens.brandLogoUrl = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
+    }
     newConfig.token = {
       ...Theme.defaultTokens,
       ...(config?.token || {}),
@@ -154,6 +160,9 @@ export class Theme {
   setConfig(config: AnyThemeConfig): void {
     const antdConfig = normalizeThemeConfig(config);
 
+    if(this.theme && this.isThemeDark()){
+      Theme.defaultTokens.brandLogoUrl = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
+    }
     // Apply default tokens to token property
     antdConfig.token = {
       ...Theme.defaultTokens,
@@ -165,6 +174,9 @@ export class Theme {
 
     // Set the base theme properties
     this.antdConfig = antdConfig;
+    if(this.theme && this.isThemeDark()){
+      Theme.defaultTokens.brandLogoUrl = "https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png"
+    }
     this.theme = {
       ...Theme.defaultTokens,
       ...antdConfig.token, // Passing through the extra, superset-specific tokens
@@ -174,6 +186,7 @@ export class Theme {
 
     // Second phase: Now that theme is initialized, we can determine if it's dark
     // and generate the legacy colors correctly
+   debugger
     const systemColors = getSystemColors(tokens);
     const isDark = this.isThemeDark(); // Now we can safely call this
     this.theme.colors = getDeprecatedColors(systemColors, isDark);
