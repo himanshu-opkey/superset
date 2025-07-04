@@ -39,8 +39,14 @@
 
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper {
     padding: 0.5rem;
+    background-color: #fff;
 }
 
+.login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper .ant-input-prefix,
+.login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper .ant-input  {
+    color: #000;
+}
+ 
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:hover {
    border-color: transparent;
 }
