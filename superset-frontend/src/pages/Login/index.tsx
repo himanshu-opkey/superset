@@ -109,10 +109,10 @@ export default function Login() {
 
   return (
     <Flex
-      justify="center"
       data-test="login-form"
       css={css`
         width: 100%;
+        padding-left:4rem;
       `}
     >
       <StyledCard title={t('Sign in')} padded>
@@ -156,7 +156,7 @@ export default function Login() {
         {(authType === AuthType.AuthDB || authType === AuthType.AuthLDAP) && (
           <Flex justify="center" vertical gap="middle">
             <Typography.Text type="secondary">
-              {t('Enter your login and password below:')}
+              {t('Enter your login and password below:  ')}
             </Typography.Text>
             <Form
               layout="vertical"
@@ -200,6 +200,18 @@ export default function Login() {
                     htmlType="submit"
                     loading={loading}
                     data-test="login-button"
+                    css={css`
+                    font-size: 1.1rem;
+                    height: 3rem;
+                    background-color: #1677ff;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                 
+                    &:hover {
+                      background-color: #145fcc;
+                    }
+                  `}
                   >
                     {t('Sign in')}
                   </Button>

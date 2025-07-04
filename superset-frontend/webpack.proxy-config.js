@@ -17,7 +17,14 @@
  * under the License.
  */
 const zlib = require('zlib');
-const { ZSTDDecompress } = require('simple-zstd');
+let ZSTDDecompress;
+try {
+  ({ ZSTDDecompress } = require('simple-zstd'));
+} catch (e) {
+  console.warn('⚠️ simple-zstd not available, using identity fallback.');
+  ZSTDDecompress = (buffer) => buffer;  // no-op fallback
+}
+
 
 const yargs = require('yargs');
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -176,3 +183,4 @@ module.exports = newManifest => {
     },
   };
 };
+

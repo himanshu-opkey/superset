@@ -170,7 +170,7 @@ const mockedProps = {
     ],
     brand: {
       path: '/superset/welcome/',
-      icon: '/static/assets/images/superset-logo-horiz.png',
+      icon: 'https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png',
       alt: 'Apache Superset',
       width: '126',
       tooltip: '',

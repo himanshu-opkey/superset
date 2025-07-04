@@ -122,11 +122,12 @@ if os.getenv("CYPRESS_CONFIG") == "true":
     from superset_test_config import *  # noqa
 
     sys.path.pop(0)
-
+FAB_ADD_SECURITY_API = True
 #
 # Optionally import superset_config_docker.py (which will have been included on
 # the PYTHONPATH) in order to allow for local settings to be overridden
 #
+
 try:
     import superset_config_docker
     from superset_config_docker import *  # noqa
