@@ -28,8 +28,10 @@ import {
   Icons,
 } from '@superset-ui/core/components';
 import { useState } from 'react';
+import './custoemstyle.css';
 import { capitalize } from 'lodash/fp';
 import getBootstrapData from 'src/utils/getBootstrapData';
+import logo from 'src/assets/images/login-page.jpg';
 
 type OAuthProvider = {
   name: string;
@@ -57,14 +59,16 @@ enum AuthType {
 
 const StyledCard = styled(Card)`
   ${({ theme }) => css`
-    width: 40%;
-    margin-top: ${theme.marginXL}px;
-    background: ${theme.colorBgBase};
+    width: 70%;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid transparent;
     .antd5-form-item-label label {
       color: ${theme.colorPrimary};
     }
   `}
 `;
+
 
 const StyledLabel = styled(Typography.Text)`
   ${({ theme }) => css`
@@ -108,16 +112,27 @@ export default function Login() {
   };
 
   return (
+
+    <Flex
+    justify="center"
+    align="center"
+    className="login-page-body"
+    vertical>
+    <div className="login-page-left-body">
+      <img
+      src={logo}
+      alt="App Logo"/>
+    </div>
+    
     <Flex
       data-test="login-form"
-      css={css`
-        width: 100%;
-        padding-left:4rem;
-      `}
+      className="login-form-body"
     >
-      <StyledCard title={t('Sign in')} padded>
+      <StyledCard title={t('Sign in')} padded
+      >
         {authType === AuthType.AuthOID && (
-          <Flex justify="center" vertical gap="middle">
+          <Flex justify="center" vertical gap="middle"
+          >
             <Form layout="vertical" requiredMark="optional" form={form}>
               {providers.map((provider: OIDProvider) => (
                 <Form.Item<LoginForm>>
@@ -135,7 +150,8 @@ export default function Login() {
           </Flex>
         )}
         {authType === AuthType.AuthOauth && (
-          <Flex justify="center" gap={0} vertical>
+          <Flex justify="center" gap={0} vertical
+          >
             <Form layout="vertical" requiredMark="optional" form={form}>
               {providers.map((provider: OAuthProvider) => (
                 <Form.Item<LoginForm>>
@@ -200,18 +216,7 @@ export default function Login() {
                     htmlType="submit"
                     loading={loading}
                     data-test="login-button"
-                    css={css`
-                    font-size: 1.1rem;
-                    height: 3rem;
-                    background-color: #1677ff;
-                    border-radius: 8px;
-                    font-weight: 600;
-                    letter-spacing: 0.5px;
-                 
-                    &:hover {
-                      background-color: #145fcc;
-                    }
-                  `}
+                    className="login-button-superset"
                   >
                     {t('Sign in')}
                   </Button>
@@ -232,5 +237,7 @@ export default function Login() {
         )}
       </StyledCard>
     </Flex>
+
+ </Flex>
   );
 }
