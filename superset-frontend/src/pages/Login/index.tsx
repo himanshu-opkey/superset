@@ -32,6 +32,7 @@ import './custoemstyle.css';
 import { capitalize } from 'lodash/fp';
 import getBootstrapData from 'src/utils/getBootstrapData';
 import logo from 'src/assets/images/opkeyLogoWhite.png';
+import responsivelogo from 'src/assets/images/opkeydarklogo.png';
 import shahidImg from 'src/assets/images/shahid_hussain.jpg';
 import {StarFilled , CopyrightOutlined} from '@ant-design/icons'
  
@@ -62,7 +63,7 @@ enum AuthType {
 
 const StyledCard = styled(Card)`
   ${({ theme }) => css`
-    width: 70%;
+    width: 28rem;
     background: transparent;
     box-shadow: none;
     border: 1px solid transparent;
@@ -160,6 +161,11 @@ export default function Login() {
       data-test="login-form"
       className="login-form-body"
     >
+      <div className="login-page-responsive-logo">
+          <img
+            src={responsivelogo}
+            alt="App Logo"/>
+      </div>
       <StyledCard title={t('Sign in With Opkey Bi-Studio')} padded
       >
         {authType === AuthType.AuthOID && (
