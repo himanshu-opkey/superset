@@ -1,5 +1,4 @@
 .login-page-body {
-    
     width: 100%;
     flex-direction: row;
     height:100%;
@@ -21,7 +20,6 @@
 
 .login-form-body .ant-card-head {
     border-bottom: 0px solid transparent;
-    /* color: #fff; */
     font-size: 2rem;
     padding: 0px;
     padding-bottom: 0.5rem;
@@ -33,7 +31,6 @@
 
 .login-form-body .ant-card-body .ant-typography {
     font-size: 1rem;
-    /* color: #fff; */
 }
 
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:focus-within,
@@ -51,17 +48,11 @@
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper .ant-input  {
     color: #000;
 }
- 
-/* .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:hover {
-   border-color: transparent;
-} */
 
 .login-page-left {
-    /* text-align: center; */
     width:50%;
     height: 100%;
     padding: 1rem;
-    /* border-radius: 2rem; */
     background-color: #116173;
     display: flex;
     flex-direction: column;
@@ -111,25 +102,26 @@
     color: #fff;
 }
 
+.login-page-left .login-left-body .login-left-body-data .login-star-icon .anticon-star svg {
+    color: #fec84b;
+    margin-right: 0.125rem;
+}
+
 .login-left-footer p {
     display: flex;
     align-items: center;
 }
 
+.login-left-footer p .anticon-copyright {
+    padding-right: 0.25rem;
+}
 
 .login-button-superset {
-    /* background-color: transparent;
-    border: 1px solid #fff; */
     padding: 1.25rem;
     font-size: 1rem;
     margin-top: 0.5rem;
     background-color: #116173;
 }
-
-/* .login-button-superset:hover {
-    background-color: transparent !important;
-    outline: #B2EBF2 auto 1px;
-} */
 
 @media (max-width: 996px) {
     .login-page-body {

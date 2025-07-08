@@ -310,7 +310,11 @@ export function Menu({
     // ---------------------------------------------------------------------------------
     return <>{link}</>;
   };
+  if (location.pathname == '/login/') {
+      return <></>
+  }
   return (
+   
     <StyledHeader className="top superset-common-css" id="main-menu" role="navigation">
       <Row>
         <Col md={16} xs={24} style={{ display: 'flex' }}>
