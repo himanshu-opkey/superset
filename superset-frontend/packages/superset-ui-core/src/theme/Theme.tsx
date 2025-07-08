@@ -65,10 +65,11 @@ export class Theme {
   private static readonly defaultTokens = {
     // Brand
     brandLogoAlt: 'Bi-Studio',
-    brandLogoUrl: 'https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png',
+    brandLogoUrl: 'https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png',
     brandLogoMargin: '18px',
     brandLogoHref: 'https://www.opkey.com/',
-    brandLogoHeight: '14px',
+    brandLogoHeight: '0.5rem',
+
 
     // Default colors
     colorPrimary: '#2893B3', // NOTE: previous lighter primary color was #20a7c9
@@ -175,9 +176,6 @@ export class Theme {
       ...tokens,
       colors: {} as DeprecatedThemeColors, // Placeholder that will be filled in the second phase
     };
-    this.theme.brandLogoUrl = this.theme.colorBgContainer!= "#ffffff"
-    ? 'https://cdn.myopkey.com/IconImages/OpkeyLogin/opkeyLogoWhite.png'
-    : 'https://cdn.myopkey.com/IconImages/OpkeyLogin/OpkeyAppLogo.png';
 
     // Second phase: Now that theme is initialized, we can determine if it's dark
     // and generate the legacy colors correctly

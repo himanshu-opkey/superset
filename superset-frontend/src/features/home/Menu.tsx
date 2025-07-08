@@ -311,7 +311,7 @@ export function Menu({
     return <>{link}</>;
   };
   return (
-    <StyledHeader className="top" id="main-menu" role="navigation">
+    <StyledHeader className="top superset-common-css" id="main-menu" role="navigation">
       <Row>
         <Col md={16} xs={24} style={{ display: 'flex' }}>
           <Tooltip
@@ -325,7 +325,7 @@ export function Menu({
           <MainNav
             mode={showMenu}
             data-test="navbar-top"
-            className="main-nav"
+            className="main-nav superset-navbar"
             selectedKeys={activeTabs}
             disabledOverflow
           >
@@ -350,7 +350,7 @@ export function Menu({
             })}
           </MainNav>
         </Col>
-        <Col md={8} xs={24}>
+        <Col md={8} xs={24} className='superset-navbar-right'>
           <RightMenu
             align={screens.md ? 'flex-end' : 'flex-start'}
             settings={settings}

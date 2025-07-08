@@ -31,7 +31,8 @@ import { useState } from 'react';
 import './custoemstyle.css';
 import { capitalize } from 'lodash/fp';
 import getBootstrapData from 'src/utils/getBootstrapData';
-import logo from 'src/assets/images/login-page.jpg';
+import logo from 'src/assets/images/opkeyLogoWhite.png';
+import shahidImg from 'src/assets/images/shahid_hussain.jpg';
 
 type OAuthProvider = {
   name: string;
@@ -118,17 +119,80 @@ export default function Login() {
     align="center"
     className="login-page-body"
     vertical>
-    <div className="login-page-left-body">
-      <img
+    <div className="login-page-left">
+      {/* <img
       src={logo}
-      alt="App Logo"/>
+      alt="App Logo"/> */}
+        <div className="login-page-logo">
+            <img
+              src={logo}
+              alt="App Logo"/>
+        </div>
+
+        <div className='login-left-body'>
+          <div className='login-left-body-data'>
+            <h4 className="review-text-content">“The level of coverage and speed you can automate is far beyond anything we have seen before.
+              Opkey helped us dramatically reduce risk and speed up testing cycles, all at a lower program cost.”</h4>
+          
+              <div className="profile_img">
+                <img   src={shahidImg} alt="App Logo" />
+              </div>
+
+            <div className="profile_caption">
+                <p className="color-white-text">Bruce Kratz</p>
+                <p className="color-white-text">VP R&amp;D- Sparta Systems</p>
+            </div>
+
+            <div className="panel_start text-center">
+              <div style={{ display: 'flex', gap: '4px' , justifyContent: 'center' }}>
+                {[...Array(5)].map((_, index) => (
+                  <span key={index}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="gold"
+                      viewBox="0 0 24 24"
+                      width="0.875rem"
+                      height="0.875rem"
+                    >
+                      <path d="M12 .587l3.668 7.571L24 9.75l-6 5.849 1.416 8.263L12 18.896l-7.416 4.966L6 15.599 0 9.75l8.332-1.592z" />
+                    </svg>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="login-left-footer">
+          <p className="color-white-text ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="2rem"
+              height="1rem"
+              fill="white"
+            >
+              <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none" />
+              <text
+                x="12"
+                y="16"
+                textAnchor="middle"
+                fontSize="12"
+                fontFamily="Arial, sans-serif"
+                fill="white"
+              >
+                C
+              </text>
+            </svg> Opkey 2023
+          </p>
+        </div>
     </div>
     
     <Flex
       data-test="login-form"
       className="login-form-body"
     >
-      <StyledCard title={t('Sign in')} padded
+      <StyledCard title={t('Sign in With Opkey Bi-Studio')} padded
       >
         {authType === AuthType.AuthOID && (
           <Flex justify="center" vertical gap="middle"

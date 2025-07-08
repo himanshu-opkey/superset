@@ -1,5 +1,5 @@
 .login-page-body {
-    background-color: #116173;
+    
     width: 100%;
     flex-direction: row;
     height:100%;
@@ -11,12 +11,17 @@
     padding-left:4rem;
     justify-content:center;
     align-items:center;
-    background-color: #116173;
+    background-color: #fff;
+}
+
+.login-page-body .login-page-left .login-page-logo {
+    width: 6rem;
+    height: 2rem;
 }
 
 .login-form-body .ant-card-head {
     border-bottom: 0px solid transparent;
-    color: #fff;
+    /* color: #fff; */
     font-size: 2rem;
     padding: 0px;
     padding-bottom: 0.5rem;
@@ -28,13 +33,13 @@
 
 .login-form-body .ant-card-body .ant-typography {
     font-size: 1rem;
-    color: #fff;
+    /* color: #fff; */
 }
 
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:focus-within,
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:focus-visible,
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:focus {
-    outline: #B2EBF2 auto 1px;
+    outline: #116173 auto 1px;
 }
 
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper {
@@ -47,43 +52,91 @@
     color: #000;
 }
  
-.login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:hover {
+/* .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper:hover {
    border-color: transparent;
-}
+} */
 
-.login-page-left-body {
-    text-align: center;
+.login-page-left {
+    /* text-align: center; */
     width:50%;
     height: 100%;
     padding: 1rem;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
+    background-color: #116173;
+    display: flex;
+    flex-direction: column;
 }
 
-.login-page-left-body img {
+.login-page-left .login-left-body {
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.login-page-left .login-left-body .login-left-body-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-page-left .login-left-body .login-left-body-data .review-text-content {
+    color: #fff;
+    font-size: 1.40rem;
+    line-height: 2.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.login-page-left .login-page-logo img {
     border-radius: 2rem;
     width: 100%;
     height:100%;
 }
 
+.login-page-left .login-left-body .login-left-body-data .profile_img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.login-page-left .login-left-body .login-left-body-data .profile_img img {
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    margin: 0px auto;
+    background-size: cover;
+}
+
+.login-page-left .color-white-text {
+    color: #fff;
+}
+
+.login-left-footer p {
+    display: flex;
+    align-items: center;
+}
+
+
 .login-button-superset {
-    background-color: transparent;
-    border: 1px solid #fff;
+    /* background-color: transparent;
+    border: 1px solid #fff; */
     padding: 1.25rem;
     font-size: 1rem;
     margin-top: 0.5rem;
+    background-color: #116173;
 }
 
-.login-button-superset:hover {
+/* .login-button-superset:hover {
     background-color: transparent !important;
     outline: #B2EBF2 auto 1px;
-}
+} */
 
 @media (max-width: 996px) {
     .login-page-body {
         flex-direction: column;
     }
 
-    .login-page-left-body {
+    .login-page-left {
         width: 100%;
         height: 50%;
     }
