@@ -26,7 +26,7 @@
 }
 
 .login-form-body .ant-card-body {
-    padding: 0px;
+    padding: 0px !important;
 }
 
 .login-form-body .ant-card-body .ant-typography {
@@ -42,6 +42,7 @@
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper {
     padding: 0.5rem;
     background-color: #fff;
+    border: 1px solid #d9d9d9;
 }
 
 .login-form-body .ant-card-body .ant-form .ant-form-item-control-input .ant-input-affix-wrapper .ant-input-prefix,
@@ -118,8 +119,8 @@
 }
 
 .login-button-superset {
-    padding: 1.25rem;
-    font-size: 1rem;
+    padding: 1.25rem !important;
+    font-size: 1rem !important;
     margin-top: 0.5rem;
     background-color: #116173;
 }
@@ -130,6 +131,14 @@
     font-size: 14px;
     line-height: 20px;
     color: #344054;
+}
+
+.login-form-body .ant-card-head {
+    color: #000;
+}
+
+.login-form-body .ant-card-body .ant-typography.ant-typography-secondary {
+    color: rgba(0,0,0,0.45);
 }
 
 @media (max-width: 1280px) {
