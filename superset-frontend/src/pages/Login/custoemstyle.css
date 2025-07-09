@@ -124,6 +124,14 @@
     background-color: #116173;
 }
 
+.login-form-body .ant-card-body .ant-form .ant-form-item-label .ant-typography {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #344054;
+}
+
 @media (max-width: 1280px) {
 
     .login-page-left {
